@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* AIRVS Light Theme - Mode clair proportionnel */
+    --background: 0 0% 98%;
+    --foreground: 220 20% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 12%;
+
+    --primary: 190 100% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 150 100% 35%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 10% 90%;
+    --muted-foreground: 220 15% 40%;
+
+    --accent: 270 70% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 10% 85%;
+    --input: 220 10% 85%;
+    --ring: 190 100% 40%;
+
+    --radius: 0.75rem;
+
+    /* Custom AIRVS tokens - Mode clair */
+    --neon-cyan: 190 100% 40%;
+    --neon-green: 150 100% 35%;
+    --neon-purple: 270 70% 50%;
+    
+    --glow-cyan: 190 100% 40%;
+    --glow-green: 150 100% 35%;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(190 100% 40% / 0.1) 0%, hsl(150 100% 35% / 0.1) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 98%) 0%, hsl(0 0% 100%) 100%);
+    
+    --shadow-neon: 0 0 20px hsl(190 100% 40% / 0.3);
+    --shadow-neon-strong: 0 0 40px hsl(190 100% 40% / 0.4);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 96%;
+    --sidebar-foreground: 220 20% 12%;
+    --sidebar-primary: 190 100% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 10% 90%;
+    --sidebar-accent-foreground: 220 20% 12%;
+    --sidebar-border: 220 10% 85%;
+    --sidebar-ring: 190 100% 40%;
+  }
+
+  .dark {
+    /* AIRVS Dark Futuristic Theme - Mode sombre */
+    --background: 220 20% 8%;
+    --foreground: 180 100% 95%;
+
+    --card: 220 18% 12%;
+    --card-foreground: 180 100% 95%;
+
+    --popover: 220 18% 12%;
+    --popover-foreground: 180 100% 95%;
+
+    --primary: 190 100% 50%;
+    --primary-foreground: 220 20% 8%;
+
+    --secondary: 150 100% 50%;
+    --secondary-foreground: 220 20% 8%;
+
+    --muted: 220 15% 20%;
+    --muted-foreground: 180 20% 65%;
+
+    --accent: 270 80% 65%;
+    --accent-foreground: 220 20% 8%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 180 100% 95%;
+
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 190 100% 50%;
+
+    /* Custom AIRVS tokens - Mode sombre */
+    --neon-cyan: 190 100% 50%;
+    --neon-green: 150 100% 50%;
+    --neon-purple: 270 80% 65%;
+    
+    --glow-cyan: 190 100% 50%;
+    --glow-green: 150 100% 50%;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(190 100% 50% / 0.15) 0%, hsl(150 100% 50% / 0.15) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(220 20% 8%) 0%, hsl(220 18% 12%) 100%);
+    
+    --shadow-neon: 0 0 20px hsl(190 100% 50% / 0.5);
+    --shadow-neon-strong: 0 0 40px hsl(190 100% 50% / 0.7);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 220 20% 10%;
+    --sidebar-foreground: 180 100% 95%;
+    --sidebar-primary: 190 100% 50%;
+    --sidebar-primary-foreground: 220 20% 8%;
+    --sidebar-accent: 220 15% 20%;
+    --sidebar-accent-foreground: 180 100% 95%;
+    --sidebar-border: 220 15% 20%;
+    --sidebar-ring: 190 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+}
+
+@layer utilities {
+  .glow-text-cyan {
+    text-shadow: 0 0 20px hsl(var(--neon-cyan) / 0.8), 0 0 40px hsl(var(--neon-cyan) / 0.4);
+  }
+  
+  .dark .glow-text-cyan {
+    text-shadow: 0 0 20px hsl(var(--neon-cyan) / 0.8), 0 0 40px hsl(var(--neon-cyan) / 0.4);
+  }
+  
+  .glow-text-green {
+    text-shadow: 0 0 20px hsl(var(--neon-green) / 0.8), 0 0 40px hsl(var(--neon-green) / 0.4);
+  }
+  
+  .dark .glow-text-green {
+    text-shadow: 0 0 20px hsl(var(--neon-green) / 0.8), 0 0 40px hsl(var(--neon-green) / 0.4);
+  }
+  
+  .glow-border-cyan {
+    box-shadow: 0 0 15px hsl(var(--neon-cyan) / 0.4), inset 0 0 15px hsl(var(--neon-cyan) / 0.1);
+  }
+  
+  .dark .glow-border-cyan {
+    box-shadow: 0 0 15px hsl(var(--neon-cyan) / 0.6), inset 0 0 15px hsl(var(--neon-cyan) / 0.2);
+  }
+  
+  .glow-border-green {
+    box-shadow: 0 0 15px hsl(var(--neon-green) / 0.4), inset 0 0 15px hsl(var(--neon-green) / 0.1);
+  }
+  
+  .dark .glow-border-green {
+    box-shadow: 0 0 15px hsl(var(--neon-green) / 0.6), inset 0 0 15px hsl(var(--neon-green) / 0.2);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+}
